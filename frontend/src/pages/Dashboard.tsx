@@ -40,44 +40,35 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Analytics Overview</h1>
-        <p className="text-muted-foreground">Monitor real-time transaction anomalies and model performance.</p>
+        <h1 className="text-2xl font-bold text-white mb-1">Analytics Overview</h1>
+        <p className="text-sm text-gray-400">Monitor real-time transaction anomalies and model performance.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpis.map((kpi, index) => (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+          <div
             key={kpi.title}
-            className="p-6 rounded-2xl bg-card/40 border border-white/5 backdrop-blur-xl shadow-lg relative overflow-hidden group"
+            className="p-5 rounded-lg bg-[#111111] border border-[#222222] shadow-sm flex flex-col justify-between"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm font-medium text-muted-foreground mb-1">{kpi.title}</p>
-                <h3 className="text-3xl font-bold text-white">{kpi.value}</h3>
+                <p className="text-xs font-medium text-gray-400 mb-1 uppercase tracking-wider">{kpi.title}</p>
+                <h3 className="text-2xl font-semibold text-white">{kpi.value}</h3>
               </div>
-              <div className={`p-3 rounded-xl ${kpi.bg}`}>
-                <kpi.icon className={`w-6 h-6 ${kpi.color}`} />
+              <div className={`p-2 rounded-md ${kpi.bg}`}>
+                <kpi.icon className={`w-5 h-5 ${kpi.color}`} />
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Chart 1 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4 }}
-          className="p-6 rounded-2xl bg-card/40 border border-white/5 backdrop-blur-xl shadow-lg"
-        >
-          <h3 className="text-lg font-semibold text-white mb-6">Transaction Volume</h3>
+        <div className="p-5 rounded-lg bg-[#111111] border border-[#222222] shadow-sm">
+          <h3 className="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Transaction Volume</h3>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={mockTrendData}>
@@ -87,41 +78,36 @@ export default function Dashboard() {
                     <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
-                <XAxis dataKey="name" stroke="#a1a1aa" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="#a1a1aa" fontSize={12} tickLine={false} axisLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
+                <XAxis dataKey="name" stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
+                <YAxis stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: '#111111', border: '1px solid #222222', borderRadius: '4px' }}
                   itemStyle={{ color: '#e4e4e7' }}
                 />
-                <Area type="monotone" dataKey="transactions" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorTx)" />
+                <Area type="monotone" dataKey="transactions" stroke="#3b82f6" strokeWidth={2} fillOpacity={1} fill="url(#colorTx)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-        </motion.div>
+        </div>
 
         {/* Chart 2 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5 }}
-          className="p-6 rounded-2xl bg-card/40 border border-white/5 backdrop-blur-xl shadow-lg"
-        >
-          <h3 className="text-lg font-semibold text-white mb-6">Fraud Detections</h3>
+        <div className="p-5 rounded-lg bg-[#111111] border border-[#222222] shadow-sm">
+          <h3 className="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Fraud Detections</h3>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={mockTrendData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
-                <XAxis dataKey="name" stroke="#a1a1aa" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="#a1a1aa" fontSize={12} tickLine={false} axisLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#222222" vertical={false} />
+                <XAxis dataKey="name" stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
+                <YAxis stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '8px' }}
+                  contentStyle={{ backgroundColor: '#111111', border: '1px solid #222222', borderRadius: '4px' }}
                 />
-                <Line type="monotone" dataKey="fraud" stroke="#ef4444" strokeWidth={3} dot={{ r: 4, fill: '#ef4444', strokeWidth: 0 }} activeDot={{ r: 6 }} />
+                <Line type="monotone" dataKey="fraud" stroke="#ef4444" strokeWidth={2} dot={{ r: 3, fill: '#ef4444', strokeWidth: 0 }} activeDot={{ r: 5 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
