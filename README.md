@@ -40,7 +40,7 @@ The entire platform is containerized for a seamless setup.
    ```
 
 3. **Access the Application**
-   - **Frontend UI**: `http://localhost:5173`
+   - **Frontend UI**: `http://localhost:5175`
    - **Backend API Docs**: `http://localhost:8000/docs`
    - **PostgreSQL**: `localhost:5432`
    - **Redis**: `localhost:6379`
