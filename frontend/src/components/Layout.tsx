@@ -17,19 +17,16 @@ export default function Layout() {
   ];
 
   return (
-    <div className="flex h-screen bg-[#0A0A0A] text-gray-100 overflow-hidden font-sans">
-      {/* Sidebar */}
-      <aside className="w-64 bg-[#111111] border-r border-[#222222] flex flex-col justify-between">
-        <div className="p-5">
-          <div className="flex items-center gap-3 mb-8 px-2">
-            <div className="p-2 bg-blue-600 rounded-lg">
-              <ShieldAlert className="w-5 h-5 text-white" />
-            </div>
-            <h1 className="text-lg font-semibold tracking-tight text-white">
-              FraudGuard AI
-            </h1>
+    <div className="min-h-screen bg-[#0A0A0A] text-gray-100 font-sans relative">
+      {/* Floating Navigation Pill */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <nav className="flex items-center gap-1 p-1.5 rounded-full bg-[#111111]/80 backdrop-blur-xl border border-[#222222] shadow-2xl">
+          <div className="flex items-center gap-2 pr-6 pl-4 py-2 border-r border-[#222222]">
+            <ShieldAlert className="w-5 h-5 text-blue-500" />
+            <span className="text-sm font-bold text-white tracking-tight">FraudGuard</span>
           </div>
-          <nav className="space-y-1">
+          
+          <div className="flex items-center gap-1 px-2">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname.startsWith(item.path);
@@ -37,10 +34,10 @@ export default function Layout() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors text-sm font-medium ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
                     isActive 
-                      ? 'bg-[#222222] text-white' 
-                      : 'text-gray-400 hover:text-gray-200 hover:bg-[#1A1A1A]'
+                      ? 'bg-blue-600/10 text-blue-500' 
+                      : 'text-gray-400 hover:text-gray-200 hover:bg-[#222222]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -48,24 +45,23 @@ export default function Layout() {
                 </Link>
               )
             })}
-          </nav>
-        </div>
-        <div className="p-5 border-t border-[#222222]">
-          <button 
-            onClick={handleLogout}
-            className="flex items-center gap-3 px-3 py-2.5 w-full rounded-md text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-colors text-sm font-medium"
-          >
-            <LogOut className="w-4 h-4" />
-            <span>Logout</span>
-          </button>
-        </div>
-      </aside>
+          </div>
+
+          <div className="pl-2 pr-1 border-l border-[#222222]">
+            <button 
+              onClick={handleLogout}
+              className="flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+              title="Logout"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
+          </div>
+        </nav>
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto bg-[#0A0A0A]">
-        <div className="p-8 max-w-7xl mx-auto min-h-full">
-          <Outlet />
-        </div>
+      <main className="pt-32 pb-12 px-8 max-w-7xl mx-auto min-h-screen">
+        <Outlet />
       </main>
     </div>
   );
