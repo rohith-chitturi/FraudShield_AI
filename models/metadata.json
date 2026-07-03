@@ -1,0 +1,124 @@
+{
+    "best_model": "Decision Tree",
+    "metrics": {
+        "Accuracy": 1.0,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1 Score": 1.0,
+        "ROC AUC": 1.0,
+        "Confusion Matrix": [
+            [
+                4850,
+                0
+            ],
+            [
+                0,
+                150
+            ]
+        ]
+    },
+    "all_results": {
+        "Logistic Regression": {
+            "Accuracy": 0.9934,
+            "Precision": 0.9834710743801653,
+            "Recall": 0.7933333333333333,
+            "F1 Score": 0.8782287822878228,
+            "ROC AUC": 0.999635738831615,
+            "Confusion Matrix": [
+                [
+                    4848,
+                    2
+                ],
+                [
+                    31,
+                    119
+                ]
+            ]
+        },
+        "Decision Tree": {
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1 Score": 1.0,
+            "ROC AUC": 1.0,
+            "Confusion Matrix": [
+                [
+                    4850,
+                    0
+                ],
+                [
+                    0,
+                    150
+                ]
+            ]
+        },
+        "Random Forest": {
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1 Score": 1.0,
+            "ROC AUC": 1.0,
+            "Confusion Matrix": [
+                [
+                    4850,
+                    0
+                ],
+                [
+                    0,
+                    150
+                ]
+            ]
+        },
+        "Isolation Forest": {
+            "Accuracy": 0.977,
+            "Precision": 0.5660377358490566,
+            "Recall": 1.0,
+            "F1 Score": 0.7228915662650602,
+            "ROC AUC": null,
+            "Confusion Matrix": [
+                [
+                    4735,
+                    115
+                ],
+                [
+                    0,
+                    150
+                ]
+            ]
+        },
+        "XGBoost": {
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1 Score": 1.0,
+            "ROC AUC": 1.0,
+            "Confusion Matrix": [
+                [
+                    4850,
+                    0
+                ],
+                [
+                    0,
+                    150
+                ]
+            ]
+        },
+        "LightGBM": {
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1 Score": 1.0,
+            "ROC AUC": 1.0,
+            "Confusion Matrix": [
+                [
+                    4850,
+                    0
+                ],
+                [
+                    0,
+                    150
+                ]
+            ]
+        }
+    }
+}
