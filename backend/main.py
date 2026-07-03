@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.core.config import settings
-from backend.api.routes import api_router
-from backend.db.session import engine, Base
+from core.config import settings
+from api.routes import api_router
+from db.session import engine, Base
 
 # Create tables if they don't exist
 Base.metadata.create_all(bind=engine)

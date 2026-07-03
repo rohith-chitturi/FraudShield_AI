@@ -2,7 +2,7 @@ import os
 import joblib
 import pandas as pd
 import numpy as np
-from backend.schemas.prediction import PredictionRequest
+from schemas.prediction import PredictionRequest
 import json
 import shap
 

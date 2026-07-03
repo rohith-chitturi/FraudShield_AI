@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.api import auth, predict, analytics
+from api import auth, predict, analytics
 
 api_router = APIRouter()
 

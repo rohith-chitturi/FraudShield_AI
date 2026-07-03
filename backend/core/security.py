@@ -2,12 +2,12 @@ from datetime import datetime, timedelta
 from typing import Any, Union, Optional
 from jose import jwt
 from passlib.context import CryptContext
-from backend.core.config import settings
+from core.config import settings
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from backend.db.session import get_db
-from backend.db.models import User
+from db.session import get_db
+from db.models import User
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ALGORITHM = "HS256"

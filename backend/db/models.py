@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, Float, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from backend.db.session import Base
+from db.session import Base
 
 class User(Base):
     __tablename__ = "users"

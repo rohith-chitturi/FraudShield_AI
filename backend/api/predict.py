@@ -2,11 +2,11 @@ import json
 from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks, UploadFile, File
 from sqlalchemy.orm import Session
 from typing import List
-from backend.db.session import get_db
-from backend.db.models import User, Prediction
-from backend.schemas.prediction import PredictionRequest, PredictionResponse, PredictionHistoryResponse
-from backend.core.security import get_current_user
-from backend.services.prediction_service import prediction_service
+from db.session import get_db
+from db.models import User, Prediction
+from schemas.prediction import PredictionRequest, PredictionResponse, PredictionHistoryResponse
+from core.security import get_current_user
+from services.prediction_service import prediction_service
 
 router = APIRouter()
 
