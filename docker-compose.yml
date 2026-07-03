@@ -44,7 +44,6 @@ services:
       - DATABASE_URL=postgresql://fraud_admin:supersecretpassword@db:5432/fraud_detection
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=your-super-secret-jwt-key
-      - CORS_ORIGINS=http://localhost:5173
     depends_on:
       db:
         condition: service_healthy
@@ -81,9 +80,9 @@ services:
       - ./frontend:/app
       - /app/node_modules
     ports:
-      - "5173:5173"
+      - "5175:5175"
     environment:
-      - VITE_API_URL=http://localhost:8000
+      - VITE_API_URL=http://localhost:8000/api/v1
     depends_on:
       - backend
 
